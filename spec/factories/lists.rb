@@ -6,5 +6,6 @@ FactoryGirl.define do
     subject_a "The Late Show"
     subject_b "List"
     adjective "loves"
+    user
   end
 end

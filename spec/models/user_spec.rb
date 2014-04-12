@@ -12,7 +12,7 @@ describe User do
       expect(user.errors[:password_confirmation]).to_not be_blank
     end
 
-    it { should have_many :lists }
+    it { should have_many(:lists).dependent(:destroy) }
   end
 
 end
