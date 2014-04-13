@@ -18,6 +18,8 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+    @reason = Reason.new
+    @reasons = Reason.where(list_id: @list.id)
   end
 
   private

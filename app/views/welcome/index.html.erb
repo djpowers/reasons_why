@@ -4,3 +4,28 @@
 <%= link_to 'Sign In', new_user_session_path %>
 
 <%= link_to 'New List', new_list_path %>
+
+<% if @lists.present? %>
+  <table>
+    <caption>Lists</caption>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Subject A</th>
+        <th>Adjective</th>
+        <th>Subject B</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @lists.each do |list| %>
+        <tr>
+          <td><%= link_to list.title, list_path(list) %></td>
+          <td><%= list.subject_a %></td>
+          <td><%= list.adjective %></td>
+          <td><%= list.subject_b %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
