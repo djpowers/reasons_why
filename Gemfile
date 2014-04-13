@@ -39,8 +39,12 @@ group :development, :test do
   gem 'minitest'
   gem 'shoulda-matchers'
   gem 'valid_attribute'
-  gem 'launchy'
+end
+
+group :test do
   gem 'capybara'
+  gem 'launchy'
+  gem 'poltergeist'
 end
 
 group :development do
