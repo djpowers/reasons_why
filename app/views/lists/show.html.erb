@@ -1,0 +1,29 @@
+<h1>Reasons Why <%= @list.subject_a %><h1>
+<h1><%= @list.adjective %></h1>
+<h1><%= @list.subject_b %></h1>
+
+<a class="button" id="button">Give Me Another Reason!</a>
+
+<div class="reason">
+</div>
+
+<%= javascript_tag do %>
+  reasons = "<%= @reasons %>";
+  reasonsArray = JSON.parse(reasons.replace(/&quot;/g,'"'));
+<% end %>
+
+
+<%= content_for :extra_footer do %>
+  <script type="text/javascript">
+
+  $(function() {
+    $reason = $('.reason');
+    $('#button').click(function () {
+      $reason.empty();
+      current_reason = reasonsArray[Math.floor(Math.random() * reasonsArray.length)];
+      $reason.append('<p>' + current_reason + '</p>');
+    });
+  });
+
+  </script>
+<% end %>

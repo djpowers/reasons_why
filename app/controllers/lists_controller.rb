@@ -17,13 +17,14 @@ class ListsController < ApplicationController
   end
 
   def show
-
+    @list = List.find(params[:id])
+    @reasons = @list.reasons.map(&:body)
   end
 
   def edit
     @list = List.find(params[:id])
     @reason = Reason.new
-    @reasons = Reason.where(list_id: @list.id)
+    @reasons = @list.reasons
   end
 
   private

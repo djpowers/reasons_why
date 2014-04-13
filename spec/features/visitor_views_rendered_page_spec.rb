@@ -22,8 +22,7 @@ feature 'visitor views rendered page', %Q{
     FactoryGirl.create(:reason, list_id: list.id)
     FactoryGirl.create(:reason, list_id: list.id)
 
-    redirect_to views_path(list.id)
-    save_and_open_page
+    visit list_path(list)
     expect(page).to have_content('Reasons')
   end
 
