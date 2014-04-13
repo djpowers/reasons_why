@@ -31,4 +31,12 @@ feature 'user creates list', %Q{
     expect(page).to have_content('List was successfully created.')
   end
 
+  scenario 'unauthenticated user attempts to create visit new list page' do
+    visit root_path
+    click_link 'New List'
+
+    expect(page).to have_content('You need to sign in or sign up before continuing.')
+    expect(page).to_not have_content('Title')
+  end
+
 end

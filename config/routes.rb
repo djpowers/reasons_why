@@ -1,13 +1,13 @@
 ReasonsWhy::Application.routes.draw do
   devise_for :users
-  resources :lists, only: [:new, :create, :show, :edit] do
+  resources :lists, only: [:new, :create, :show, :edit, :index] do
     resources :reasons, only: [:new, :create]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  root 'lists#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

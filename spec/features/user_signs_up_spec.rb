@@ -25,6 +25,8 @@ feature 'user registers for site', %Q{
 
     expect(page).to have_content('Welcome! You have signed up successfully.')
     expect(page).to have_content('Sign Out')
+    expect(page).to_not have_content('Sign In')
+    expect(page).to_not have_content('Sign Up')
   end
 
 end

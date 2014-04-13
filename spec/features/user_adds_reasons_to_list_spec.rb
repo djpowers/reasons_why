@@ -30,4 +30,11 @@ feature 'user adds reason to list', %Q{
 
   end
 
+  scenario 'unauthenticated user attempts to visit page' do
+    visit edit_list_path(list)
+
+    expect(page).to have_content('You need to sign in or sign up before continuing.')
+    expect(page).to_not have_content(list.title)
+  end
+
 end

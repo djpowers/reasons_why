@@ -1,5 +1,7 @@
 class ListsController < ApplicationController
 
+  before_filter :authenticate_user!, only: [:new, :edit]
+
   def new
     @list = List.new
   end
@@ -25,6 +27,10 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
     @reason = Reason.new
     @reasons = @list.reasons
+  end
+
+  def index
+    @lists = List.where(user_id: current_user.id) if user_signed_in?
   end
 
   private
