@@ -1,17 +1,22 @@
 <h6><%= @list.title %></h6>
 
+<p>You only have <%= @list.reasons.count %> reasons? Add some more!</p>
+
+<%= link_to 'Share with the world!', list_path(@list) %><br><br>
+
 <%= form_for [@list, @reason] do |f| %>
-  <%= f.label :body %>
-  <%= f.text_field :body, id: 'body' %><br>
+  <%= f.label :reason %>
+  <%= f.text_field :body, id: 'body', autofocus: true %>
   <%= f.submit %>
 <% end %>
 
+<br>
+
 <% if @reasons.present? %>
   <table>
-    <caption>Reasons</caption>
     <thead>
       <tr>
-        <th>Body</th>
+        <th>Reasons</th>
       </tr>
     </thead>
 

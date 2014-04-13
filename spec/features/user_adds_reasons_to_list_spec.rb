@@ -27,7 +27,7 @@ feature 'user adds reason to list', %Q{
     click_button 'Create Reason'
 
     expect(page).to have_content('Reason was successfully added.')
-
+    expect(page).to have_content('Add some more!')
   end
 
   scenario 'unauthenticated user attempts to visit page' do

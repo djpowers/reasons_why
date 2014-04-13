@@ -8,10 +8,10 @@ class ReasonsController < ApplicationController
 
     if @reason.save
       flash[:success] = 'Reason was successfully added.'
-      redirect_to list_path(params[:list_id])
+      redirect_to edit_list_path(params[:list_id])
     else
       flash[:error] = 'There was an error saving. Did you fill in the field?'
-      redirect_to list_path(params[:list_id])
+      redirect_to edit_list_path(params[:list_id])
     end
   end
 

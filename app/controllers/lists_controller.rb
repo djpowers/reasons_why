@@ -12,7 +12,7 @@ class ListsController < ApplicationController
 
     if @list.save
       flash[:success] = 'List was successfully created.'
-      redirect_to @list
+      redirect_to edit_list_path(@list)
     else
       render 'new'
     end
