@@ -19,7 +19,9 @@ feature 'user adds reason to list', %Q{
     sign_in_as(user)
 
     list = user.lists.first
-    click_link list.title
+    within "#list_#{list.id}" do
+      click_link 'Edit'
+    end
     reason = FactoryGirl.build(:reason)
     fill_in 'body', with: reason.body
     click_button 'Create Reason'

@@ -1,6 +1,6 @@
 ReasonsWhy::Application.routes.draw do
   devise_for :users
-  resources :lists, only: [:new, :create, :show] do
+  resources :lists, only: [:new, :create, :show, :edit] do
     resources :reasons, only: [:new, :create]
   end
   # The priority is based upon order of creation: first created -> highest priority.

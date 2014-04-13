@@ -1,0 +1,26 @@
+<h6><%= @list.title %></h6>
+
+<%= form_for [@list, @reason] do |f| %>
+  <%= f.label :body %>
+  <%= f.text_field :body, id: 'body' %><br>
+  <%= f.submit %>
+<% end %>
+
+<% if @reasons.present? %>
+  <table>
+    <caption>Reasons</caption>
+    <thead>
+      <tr>
+        <th>Body</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @list.reasons.each do |reason| %>
+        <tr>
+          <td><%= reason.body %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

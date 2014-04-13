@@ -17,6 +17,10 @@ class ListsController < ApplicationController
   end
 
   def show
+
+  end
+
+  def edit
     @list = List.find(params[:id])
     @reason = Reason.new
     @reasons = Reason.where(list_id: @list.id)
