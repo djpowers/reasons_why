@@ -19,6 +19,11 @@
       <% end -%>
     </span>
 
+    <%= link_to 'Sign Up', new_user_registration_path if !user_signed_in? %><br>
+    <%= link_to 'Sign Out', destroy_user_session_path, method: :delete if user_signed_in? %><br>
+    <%= link_to 'Sign In', new_user_session_path if !user_signed_in? %><br>
+    <%= link_to 'New List', new_list_path %>
+
     <%= yield %>
     <%= javascript_include_tag "application" %>
     <%= yield :extra_footer %>

@@ -1,6 +1,6 @@
 class ReasonsController < ApplicationController
 
-  before_filter :authenticate_user!
+  before_action :authenticate_user!
 
   def create
     @reason = Reason.new(reason_params)

@@ -6,7 +6,7 @@
 
 <%= form_for [@list, @reason] do |f| %>
   <%= f.label :reason %>
-  <%= f.text_field :body, id: 'body', autofocus: true %>
+  <%= f.text_field :body, id: 'reason_body', autofocus: true %>
   <%= f.submit %>
 <% end %>
 

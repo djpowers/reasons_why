@@ -23,7 +23,7 @@ feature 'user adds reason to list', %Q{
       click_link 'Edit'
     end
     reason = FactoryGirl.build(:reason)
-    fill_in 'body', with: reason.body
+    fill_in 'reason_body', with: reason.body
     click_button 'Create Reason'
 
     expect(page).to have_content('Reason was successfully added.')

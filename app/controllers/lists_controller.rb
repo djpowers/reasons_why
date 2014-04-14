@@ -1,6 +1,7 @@
 class ListsController < ApplicationController
 
-  before_filter :authenticate_user!, only: [:new, :edit]
+  before_action :authenticate_user!, only: [:new, :edit]
+  before_action :authorize_user, only: [:edit]
 
   def new
     @list = List.new
@@ -37,6 +38,13 @@ class ListsController < ApplicationController
 
     def list_params
       params.require(:list).permit(:title, :subject_a, :subject_b, :adjective)
+    end
+
+    def authorize_user
+      unless current_user == List.find(params[:id]).user
+        flash[:alert] = 'Hey! Make your own list, pal!'
+        redirect_to new_list_path
+      end
     end
 
 end
