@@ -1,0 +1,15 @@
+#adjective_header, #because {
+  font-size: 48px;
+  font-style: italic;
+  display: inline;
+}
+
+.subject_header {
+  font-size: 72px;
+  font-weight: bold;
+  display: inline;
+}
+
+.reason p {
+  font-size: 48px;
+}

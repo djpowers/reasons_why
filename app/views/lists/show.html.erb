@@ -1,11 +1,13 @@
-<h1>Reasons Why <%= @list.subject_a %><h1>
-<h1><%= @list.adjective %></h1>
-<h1><%= @list.subject_b %></h1>
+<p class="subject_header"><%= @list.subject_a %> </p>
+<p id="adjective_header"><%= @list.adjective %> </p>
+<p class="subject_header"><%= @list.subject_b %> </p>
+<p id="because">because</p>
 
-<button type="button" id="button">Give Me Another Reason!</button>
+<br>
 
 <div class="reason">
 </div>
+<button type="button" id="button">Give Me Another Reason!</button>
 
 <%= javascript_tag do %>
   reasons = "<%= @reasons %>";
