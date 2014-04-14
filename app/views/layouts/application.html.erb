@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Reasons Why" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -13,16 +13,24 @@
 
   <body>
 
+    <nav class="top-bar" data-topbar>
+      <section>
+        <ul class="right">
+          <%= link_to 'Sign Out', destroy_user_session_path, method: :delete if user_signed_in? %>
+          <%= link_to 'Sign In', new_user_session_path if !user_signed_in? %><br>
+          <%= link_to 'Sign Up', new_user_registration_path if !user_signed_in? %>
+        </ul>
+        <ul class="left">
+          <%= link_to 'New List', new_list_path %>
+        </ul>
+      </section>
+    </nav>
+
     <span id="flashes">
       <% flash.each do |name, msg| -%>
         <%= content_tag :div, msg, class: "#{name} alert-box" %>
       <% end -%>
     </span>
-
-    <%= link_to 'Sign Up', new_user_registration_path if !user_signed_in? %><br>
-    <%= link_to 'Sign Out', destroy_user_session_path, method: :delete if user_signed_in? %><br>
-    <%= link_to 'Sign In', new_user_session_path if !user_signed_in? %><br>
-    <%= link_to 'New List', new_list_path %>
 
     <%= yield %>
     <%= javascript_include_tag "application" %>

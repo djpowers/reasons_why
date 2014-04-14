@@ -18,9 +18,18 @@
           <td><%= list.subject_a %></td>
           <td><%= list.adjective %></td>
           <td><%= list.subject_b %></td>
-          <td><%= link_to 'Edit', edit_list_path(list) %>
+          <td><%= link_to 'Edit', edit_list_path(list) %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
+<% end %>
+
+<% if !user_signed_in? %>
+  <h1>Reasons Why</h1>
+  <ol>
+    <li>Pick two things</li>
+    <li>Choose a comparison or adjective</li>
+    <li>List reasons to support your claim</li>
+  </ol>
 <% end %>
