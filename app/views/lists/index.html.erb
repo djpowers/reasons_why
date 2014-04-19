@@ -1,35 +1,41 @@
 <% if @lists.present? %>
-  <table>
-    <caption>Lists</caption>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Subject A</th>
-        <th>Adjective</th>
-        <th>Subject B</th>
-        <th>Add Reasons</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @lists.each do |list| %>
-        <tr id="list_<%= list.id %>">
-          <td><%= link_to list.title, list_path(list) %></td>
-          <td><%= list.subject_a %></td>
-          <td><%= list.adjective %></td>
-          <td><%= list.subject_b %></td>
-          <td><%= link_to 'Edit', edit_list_path(list) %></td>
+  <div class="row">
+    <table>
+      <caption>Lists</caption>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Subject A</th>
+          <th>Adjective</th>
+          <th>Subject B</th>
+          <th>Add Reasons</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+
+      <tbody>
+        <% @lists.each do |list| %>
+          <tr id="list_<%= list.id %>">
+            <td><%= link_to list.title, list_path(list) %></td>
+            <td><%= list.subject_a %></td>
+            <td><%= list.adjective %></td>
+            <td><%= list.subject_b %></td>
+            <td><%= link_to 'Edit', edit_list_path(list) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 <% end %>
 
 <% if !user_signed_in? %>
-  <h1>Reasons Why</h1>
-  <ol>
-    <li>Pick two things</li>
-    <li>Choose a comparison or adjective</li>
-    <li>List reasons to support your claim</li>
-  </ol>
+  <div class="row">
+    <div class="small-12 centered columns">
+      <h1>Reasons Why</h1>
+      <ol>
+        <li>Pick two things</li>
+        <li>Choose a comparison or adjective</li>
+        <li>List reasons to support your claim</li>
+      </ol>
+    </div>
+  </div>
 <% end %>

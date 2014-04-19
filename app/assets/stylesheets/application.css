@@ -13,3 +13,7 @@
 
  *= require_tree .
  */
+
+.center_text {
+  text-align: center;
+}

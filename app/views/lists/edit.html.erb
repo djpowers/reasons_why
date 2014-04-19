@@ -1,31 +1,33 @@
-<h6><%= @list.title %></h6>
+<div class="small-9 small-centered columns">
+  <h6><%= @list.title %></h6>
 
-<p>You only have <%= @list.reasons.count %> reasons? Add some more!</p>
+  <p>You only have <%= @list.reasons.count %> reasons? Add some more!</p>
 
-<%= link_to 'Share with the world!', list_path(@list) %><br><br>
+  <%= link_to 'Share with the world!', list_path(@list) %><br><br>
 
-<%= form_for [@list, @reason] do |f| %>
-  <%= f.label :reason %>
-  <%= f.text_field :body, id: 'reason_body', autofocus: true %>
-  <%= f.submit %>
-<% end %>
+  <%= form_for [@list, @reason] do |f| %>
+    <%= f.label :reason %>
+    <%= f.text_field :body, id: 'reason_body', autofocus: true %>
+    <%= f.submit %>
+  <% end %>
 
-<br>
+  <br>
 
-<% if @reasons.present? %>
-  <table>
-    <thead>
-      <tr>
-        <th>Reasons</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @list.reasons.each do |reason| %>
+  <% if @reasons.present? %>
+    <table>
+      <thead>
         <tr>
-          <td><%= reason.body %></td>
+          <th>Reasons</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% end %>
+      </thead>
+
+      <tbody>
+        <% @list.reasons.each do |reason| %>
+          <tr>
+            <td><%= reason.body %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>
