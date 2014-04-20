@@ -19,7 +19,7 @@ feature 'visitor views rendered page', %Q{
     5.times { FactoryGirl.create(:reason, list_id: list.id) }
 
     visit list_path(list)
-    expect(page).to have_content('Reasons')
+    expect(page).to have_content('because')
   end
 
   scenario 'visitor clicks new reason button', js: true do
