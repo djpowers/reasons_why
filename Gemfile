@@ -57,6 +57,7 @@ end
 gem 'devise'
 gem 'foundation-rails'
 gem 'travis'
+gem 'coveralls', require: false
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
