@@ -30,8 +30,6 @@ feature 'user creates list', %Q{
 
     expect(page).to have_content('List was successfully created.')
     expect(page).to have_content('Add some more!')
-
-    click_link 'Share with the world!'
   end
 
   scenario 'unauthenticated user attempts to create visit new list page' do

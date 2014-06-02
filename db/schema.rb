@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140412211554) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "lists", force: true do |t|
     t.string   "title",      null: false
     t.string   "subject_a",  null: false

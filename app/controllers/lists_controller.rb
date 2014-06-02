@@ -25,6 +25,7 @@ class ListsController < ApplicationController
   end
 
   def edit
+    @minimum_num_reasons = 5
     @list = List.find(params[:id])
     @reason = Reason.new
     @reasons = @list.reasons

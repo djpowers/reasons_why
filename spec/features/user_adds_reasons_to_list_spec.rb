@@ -37,4 +37,28 @@ feature 'user adds reason to list', %Q{
     expect(page).to_not have_content(list.title)
   end
 
+  scenario 'link to view is only shown when 5 reasons created' do
+    user = list.user
+    sign_in_as(user)
+
+    list = user.lists.first
+    within "#list_#{list.id}" do
+      click_link 'Edit'
+    end
+
+    expect(page).to have_content('You only have 0 reasons? Add some more!')
+    expect(page).to_not have_content('Share with the world!')
+
+    4.times do |x|
+      fill_in 'reason_body', with: 'Reason ' + (x + 1).to_s
+      click_button 'Create Reason'
+    end
+    expect(page).to_not have_content('Share with the world!')
+
+    fill_in 'reason_body', with: 'Reason 5'
+    click_button 'Create Reason'
+
+    expect(page).to have_content('Share with the world!')
+  end
+
 end

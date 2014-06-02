@@ -37,12 +37,10 @@ feature 'user registers for site', %Q{
     sign_in_as(user)
     visit edit_list_path(list)
 
-    expect(page).to have_content('Share with the world!')
     expect(page).to have_selector(:link_or_button, 'Create Reason')
     expect(page).to have_content('Add some more!')
 
     visit edit_list_path(other_list)
-    expect(page).to_not have_content('Share with the world!')
     expect(page).to_not have_selector(:link_or_button, 'Create Reason')
     expect(page).to_not have_content('Add some more!')
     expect(page).to have_selector(:link_or_button, 'Create List')
