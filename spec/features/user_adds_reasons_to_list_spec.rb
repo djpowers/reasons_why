@@ -37,6 +37,26 @@ feature 'user adds reason to list', %Q{
     expect(page).to_not have_content(list.title)
   end
 
+  scenario 'plurality is correct when one reason' do
+    user = list.user
+    sign_in_as(user)
+
+    list = user.lists.first
+    within "#list_#{list.id}" do
+      click_link 'Edit'
+    end
+    reason = FactoryGirl.build(:reason)
+    fill_in 'reason_body', with: reason.body
+    click_button 'Create Reason'
+
+    expect(page).to have_content('You only have 1 reason?')
+
+    fill_in 'reason_body', with: reason.body
+    click_button 'Create Reason'
+
+    expect(page).to have_content('You only have 2 reasons?')
+  end
+
   scenario 'link to view is only shown when 5 reasons created' do
     user = list.user
     sign_in_as(user)
