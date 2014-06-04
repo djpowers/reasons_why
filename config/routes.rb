@@ -1,5 +1,5 @@
 ReasonsWhy::Application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   resources :lists, only: [:new, :create, :show, :edit, :index] do
     resources :reasons, only: [:new, :create]
   end

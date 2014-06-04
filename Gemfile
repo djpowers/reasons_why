@@ -39,6 +39,7 @@ group :development, :test do
   gem 'minitest'
   gem 'shoulda-matchers'
   gem 'valid_attribute'
+  gem 'dotenv-rails'
 end
 
 group :test do
@@ -58,6 +59,7 @@ gem 'devise'
 gem 'foundation-rails'
 gem 'travis'
 gem 'coveralls', require: false
+gem 'omniauth-facebook'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
