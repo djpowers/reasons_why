@@ -1,6 +1,7 @@
 class List < ActiveRecord::Base
 
   before_create :randomize_id
+  is_impressionable
 
   validates_presence_of :title, :subject_a, :subject_b, :adjective, :user
 

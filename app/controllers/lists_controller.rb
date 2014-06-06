@@ -2,6 +2,7 @@ class ListsController < ApplicationController
 
   before_action :authenticate_user!, only: [:new, :edit]
   before_action :authorize_user, only: [:edit]
+  impressionist
 
   def new
     @list = List.new

@@ -60,6 +60,7 @@ gem 'foundation-rails'
 gem 'travis'
 gem 'coveralls', require: false
 gem 'omniauth-facebook'
+gem 'impressionist'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
