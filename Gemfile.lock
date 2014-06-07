@@ -97,6 +97,7 @@ GEM
     hashie (2.1.1)
     highline (1.6.21)
     hike (1.2.3)
+    html5_validators (1.1.2)
     httpclient (2.3.4.1)
     i18n (0.6.9)
     impressionist (1.5.1)
@@ -271,6 +272,7 @@ DEPENDENCIES
   dotenv-rails
   factory_girl_rails
   foundation-rails
+  html5_validators
   impressionist
   jbuilder (~> 1.2)
   jquery-rails

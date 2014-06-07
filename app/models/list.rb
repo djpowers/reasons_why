@@ -1,4 +1,5 @@
 class List < ActiveRecord::Base
+  include ActiveModel::Validations
 
   before_create :randomize_id
   is_impressionable
