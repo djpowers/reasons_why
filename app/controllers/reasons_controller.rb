@@ -1,7 +1,7 @@
 class ReasonsController < ApplicationController
 
   before_action :authenticate_user!
-  impressionist
+  impressionist :actions => [:create]
 
   def create
     @reason = Reason.new(reason_params)
