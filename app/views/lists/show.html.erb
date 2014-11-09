@@ -21,23 +21,3 @@
   reasons = "<%= @reasons %>";
   reasonsArray = JSON.parse(reasons.replace(/&quot;/g,'"'));
 <% end %>
-
-
-<%= content_for :extra_footer do %>
-  <script type="text/javascript">
-
-    $(function() {
-      $reason = $('.reason');
-      var first_reason = reasonsArray[Math.floor(Math.random() * reasonsArray.length)];
-      $reason.append('<p>' + first_reason + '</ p>')
-
-      $('#reason_button').click(function () {
-        $reason.empty();
-        var current_reason = reasonsArray[Math.floor(Math.random() * reasonsArray.length)];
-        $reason.append('<p>' + current_reason + '</ p>');
-      });
-    });
-
-  </script>
-<% end %>
-
