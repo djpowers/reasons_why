@@ -29,6 +29,10 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+group :production do
+  gem 'rails_12factor'
+end
+
 group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
