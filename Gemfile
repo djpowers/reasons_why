@@ -59,8 +59,6 @@ end
 
 gem 'devise'
 gem 'foundation-rails'
-gem 'travis'
-gem 'coveralls', require: false
 gem 'omniauth-facebook'
 gem 'impressionist'
 gem 'html5_validators'
